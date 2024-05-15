@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+        <a class="login-return-link" href="/">RETURN</a>
+
+        <h1>Login</h1>
+
+        <form class="container" action="/login" method="POST">
+            <input type="text" class="user-data" name="username" placeholder="Username" required><br><br>
+            <input type="password" class="user-data" name="password" placeholder="Password" required>
+            {% if error_message %}
+                <p class="error">{{ error_message }}</p>
+            {% endif %}
+            <br>
+            <button type="submit" class="button">Login</button>
+        </form>
+
+        <p class="question">Don't have an account? <a class="link" href="sign_up">Sign up</a></p>
+    </body>
+</html>

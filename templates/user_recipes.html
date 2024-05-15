@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My recipes</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script defer src="../static/my_recipes.js"></script>
+    </head>
+
+    <body>
+        <a class="login-return-link" href="/">RETURN</a>
+
+        <h1>MY RECIPES</h1>
+
+        <div class="table-container">
+            {% if not recipes %}
+                <p style="text-align: center;">No recipes found</p>
+            {% else %}
+                <table id="recipe-table">
+                    <tbody>
+                        {% for recipe_id, recipe_text in recipes.items() %}
+                        <tr>
+                            <td class="recipe-cell" data-recipe-id="{{ recipe_id }}">{{ recipe_text }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </body>
+</html>

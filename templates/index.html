@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipe Generator</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script defer src="../static/script.js"></script>
+    </head>
+
+    <body>
+        <a id="loginLink" class="login-return-link" href="login">LOGIN</a>
+
+        <h1>GET YOUR RECIPE!</h1>
+
+        <form class="container" action="/" method="POST">
+            <input type="text" id="ingredients" name="ingredients" placeholder="Enter the ingredients (separate them by commas):">
+            <button type="submit" class="button">Generate</button>
+        </form>
+
+        <div class="container">
+            <textarea class="recipe" placeholder="Your recipe will be here!" readonly>{{ recipe }}</textarea>
+        </div>
+
+        <a class="my-recipes-button" href="my_recipes">
+            <img class="my-recipes-icon" src="../static/images/book_icon.png">
+            My Recipes
+        </a>
+
+        <img id="saveButtonImage" class="save-button" src="../static/images/save_button.png">
+        <img id="pressedButtonImage" class="save-button hidden" src="../static/images/save_button_pressed.png">
+    </body>
+</html>
